@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* main menu */
+
+.main_menu {
+  .header {
+    background-color: #293241;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+  }
+
+  .logo {
+    h1 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
+  .burger {
+    cursor: pointer;
+    z-index: 1;
+    span {
+      width: 3rem;
+      height: 2px;
+      background-color: #fff;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: 0.4s ease-in, width 0.3s;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+      }
+      span:nth-child(2) {
+        width: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+      }
+    }
+  }
+
+  .nav {
+    background-color: #000814;
+    width: 25rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: left 0.3s ease-in;
+    &.active {
+      left: 0;
+    }
+
+    &__item {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: #fff;
+      position: relative;
+      transition: 0.3s;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        background-color: #f72585;
+        transition: 0.3s;
+      }
+      &:hover {
+        color: #f72585;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
